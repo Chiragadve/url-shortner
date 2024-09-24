@@ -5,18 +5,18 @@ const urlSchema = new mongoose.Schema(
   {
     shortID: {
       type: String,
-      require: true,
+      required: true,
       unique: true,
     },
     redirectURL: {
       type: String,
-      require: true,
+      required: true,
     },
     visitHistory: [{ timestamp: { type: Number } }],
   },
   { timestamps: true }
 );
 
-const URL = mongoose.model("url", urlSchema);
+const URL = mongoose.model("URL", urlSchema); // Capitalized model name for consistency
 
 module.exports = URL;
